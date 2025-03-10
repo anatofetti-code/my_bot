@@ -4,6 +4,11 @@
     <gazebo>
         <plugin name="diff_drive" filename="libgazebo_ros_diff_drive.so">
             
+            <!-- Remap the default cmd_vel topic to diff_cont/cmd_vel_unstamped -->
+            <ros>
+                <remapping>cmd_vel:=diff_cont/cmd_vel_unstamped</remapping>
+            </ros>
+            
             <!-- Wheel information -->
             <left_joint>left_wheel_joint</left_joint>
             <right_joint>right_wheel_joint</right_joint>
